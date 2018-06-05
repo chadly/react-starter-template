@@ -16,5 +16,21 @@
 		"@babel/proposal-export-default-from",
 		"@babel/proposal-class-properties",
 		["@babel/proposal-object-rest-spread", { "useBuiltIns": true }]
-	]
+	],
+	"env":{
+		"node":{
+			"presets": [
+				[
+					"@babel/env",
+					{
+						"shippedProposals": true,
+						"targets": {
+							"node": "current"
+						}
+					}
+				],
+				"@babel/react"
+			]
+		}
+	}
 }

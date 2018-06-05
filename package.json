@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --progress --open",
+    "test": "cross-env BABEL_ENV=node mocha --recursive --require test/babel-register",
     "lint": "eslint webpack.config.js src --ext=js,jsx"
   },
   "dependencies": {
@@ -22,9 +23,13 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/preset-react": "^7.0.0-beta.49",
+    "@babel/register": "^7.0.0-beta.49",
     "babel-loader": "^8.0.0-beta.2",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.6",
     "eslint": "^4.9.0",
     "eslint-config-civicsource": "^9.0.0",
+    "mocha": "^5.2.0",
     "webpack": "^4.11.0",
     "webpack-cli": "^3.0.2",
     "webpack-dev-server": "^3.1.4"
