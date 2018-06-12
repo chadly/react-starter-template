@@ -9,7 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --open",
     "test": "cross-env BABEL_ENV=node mocha --recursive --require test/babel-register",
-    "lint": "eslint webpack.config.js src --ext=js,jsx"
+    "lint": "eslint webpack.config.js src test --ext=js,jsx"
   },
   "dependencies": {
     "react": "^16.4.0",
