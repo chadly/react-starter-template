@@ -1,5 +1,10 @@
 import { JSDOM } from "jsdom";
 
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+configure({ adapter: new Adapter() });
+
 export default function() {
 	// inspired by https://semaphoreci.com/community/tutorials/testing-react-components-with-enzyme-and-mocha
 
@@ -21,13 +26,6 @@ export default function() {
 				global[property] = global.document.defaultView[property];
 			}
 		});
-
-		this.requests = [];
-
-		global.fetch = url =>
-			new Promise((resolve, reject) => {
-				this.requests.push({ url, resolve, reject });
-			});
 	});
 
 	afterEach(function() {
