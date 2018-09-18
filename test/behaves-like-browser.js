@@ -21,7 +21,12 @@ export default function() {
 		};
 
 		Object.keys(global.document.defaultView).forEach(property => {
-			if (typeof global[property] === "undefined") {
+			if (
+				typeof global[property] === "undefined" &&
+				// https://github.com/jsdom/jsdom/issues/2304
+				property !== "localStorage" &&
+				property !== "sessionStorage"
+			) {
 				this.exposedProperties.push(property);
 				global[property] = global.document.defaultView[property];
 			}
